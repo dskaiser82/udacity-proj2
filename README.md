@@ -23,5 +23,5 @@ Information about the API server and how to use it can be found in its [README f
 
 ## Sass Compiling
 
-This project uses Sass for styling.  In root run.
+This project uses Sass for styling.  In root run:
 sass --watch frontend/src/css/sass/style.scss:frontend/src/css/style.css
