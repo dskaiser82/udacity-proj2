@@ -4,6 +4,16 @@ import * as API from '../api/Api';
 import '../css/style.css';
 
 class ReadApp extends Component {
+
+
+    componentDidMount(){
+      API.getCats().then((allCats) => {
+        this.setState({ allCats })
+        console.log(this.state)
+     })
+    }
+
+
   render() {
     return (
       <div className="App">
