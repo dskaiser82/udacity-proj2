@@ -1,16 +1,16 @@
-import { ADD_RECIPE, REMOVE_FROM_CALENDAR } from '../actions'
+import { ADD_POST,} from '../actions'
 import { combineReducers } from 'redux'
 
 
 //Our Food Reducer
-function food(state = {}, action ){
+function post(state = {}, action ){
   switch(action.type) {
-    case ADD_RECIPE :
-      const { recipe } = action
+    case ADD_POST :
+      const { post } = action
 
       return {
         ...state,
-        [recipe.label]: recipe
+        post: post
       }
       default :
         return state
@@ -18,5 +18,5 @@ function food(state = {}, action ){
 }
 
 export default combineReducers({
-  food
+  post
 })
