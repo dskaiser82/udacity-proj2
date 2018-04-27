@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
 import * as API from '../api/Api';
 
 
@@ -10,8 +11,8 @@ class ReadApp extends Component {
 
 
     componentDidMount(){
-      API.getCats().then((allCats) => {
-        this.setState({ allCats })
+      API.getPosts().then((allPosts) => {
+        this.setState({ allPosts })
         console.log(this.state)
      })
     }
