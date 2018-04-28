@@ -19,6 +19,8 @@ const logger = store => next => action => {
   return result
 }
 
+
+//STORE
 const store = createStore(
   reducer,
   composeEnhancers(
@@ -27,11 +29,5 @@ const store = createStore(
 )
 
 
-
-ReactDOM.render(
-  <Provider store={store}>
-      <ReadApp  />
-  </Provider>
-, document.getElementById('root')
-);
+ReactDOM.render(<ReadApp store={store} />, document.getElementById('root'));
 registerServiceWorker();

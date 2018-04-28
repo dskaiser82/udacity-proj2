@@ -1,55 +1,47 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux'
-import * as API from '../api/Api';
+import React, { Component } from 'react'
+import { addRecipe } from '../actions'
 
-import { addPost } from '../actions'
-import '../css/style.css';
-
-class ReadApp extends Component {
-
+class App extends Component {
   state = {
-    post: null
+    calendar: null
   }
-
   componentDidMount () {
     const { store } = this.props
 
-    // store.subscribe(() => {
-    //   this.setState(() => ({
-    //     //calendar is from reducers
-    //     post: store.getState()
-    //   }))
-    // })
+    store.subscribe(() => {
+      this.setState(() => ({
+        //calendar is from reducers
+        calendar: store.getState()
+      }))
+    })
   }
+  submitFood = () => {
+    this.props.store.dispatch(addRecipe({
+      day: 'monday',
+      meal: 'breakfast',
+      recipe: {
+        label: this.input.value
+      },
+    }))
 
-
-    // componentDidMount(){
-    //   API.getPosts().then((allPosts) => {
-    //     this.setState({ allPosts })
-    //     console.log(this.state)
-    //  })
-    // }
-
-
+    this.input.value = ''
+  }
   render() {
     return (
       <div>
-       <input
-         type='text'
-         ref={(input) => this.input = input}
-         placeholder="New Post Here"
-       />
-       {/* <button onClick={this.submitFood}>Submit</button> */}
+        <input
+          type='text'
+          ref={(input) => this.input = input}
+          placeholder="Monday's Breakfast"
+        />
+        <button onClick={this.submitFood}>Submit</button>
 
-       <pre>
-         Post Comment: {this.state.post && this.state.post.comment}
-       </pre>
-     </div>
-   )
-
+        <pre>
+          Monday's Breakfast: {this.state.calendar && this.state.calendar.monday.breakfast}
+        </pre>
+      </div>
+    )
   }
 }
 
-export default ReadApp;
+export default App
