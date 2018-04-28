@@ -7,7 +7,6 @@ const initialPost = {
   title: null,
   body: null,
   author: null
-
 }
 
 function post (state = initialPost, action) {
