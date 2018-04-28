@@ -2,21 +2,26 @@ import { ADD_POST,} from '../actions'
 import { combineReducers } from 'redux'
 
 
-//Our Food Reducer
-function post(state = {}, action ){
-  switch(action.type) {
-    case ADD_POST :
-      const { post } = action
+const initialPost = {
+  id: null,
+  title: null,
+  body: null,
+  author: null
 
+}
+
+function post (state = initialPost, action) {
+  const { post } = action
+
+  switch (action.type) {
+    case ADD_POST :
       return {
         ...state,
-        post: post
       }
-      default :
-        return state
+
+    default :
+      return state
   }
 }
 
-export default combineReducers({
-  post
-})
+export default post

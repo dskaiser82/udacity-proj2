@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux'; //for Redux
 import reducer from './reducers'  //for Redux
 import { Provider } from 'react-redux'; //New React Dedux
 
-import ReadApp from './components/App';
+import ReadApp from './components/App'; //Main component
 import registerServiceWorker from './registerServiceWorker';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
