@@ -16,6 +16,8 @@ class App extends Component {
       }))
     })
   }
+  //This Uses a the reducer
+  //and updates the store with this function 
   submitFood = () => {
     this.props.store.dispatch(addRecipe({
       day: 'monday',
