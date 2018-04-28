@@ -8,6 +8,7 @@ class App extends Component {
   componentDidMount () {
     const { store } = this.props
 
+
     store.subscribe(() => {
       this.setState(() => ({
         //calendar is from reducers
@@ -19,9 +20,8 @@ class App extends Component {
     this.props.store.dispatch(addRecipe({
       day: 'monday',
       meal: 'breakfast',
-      recipe: {
-        label: this.input.value
-      },
+      recipe: this.input.value
+
     }))
 
     this.input.value = ''
@@ -36,9 +36,9 @@ class App extends Component {
         />
         <button onClick={this.submitFood}>Submit</button>
 
-        <pre>
+        <p>
           Monday's Breakfast: {this.state.calendar && this.state.calendar.monday.breakfast}
-        </pre>
+        </p>
       </div>
     )
   }
