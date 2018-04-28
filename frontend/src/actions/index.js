@@ -1,9 +1,9 @@
 export const ADD_POST = 'ADD_POST'
 
-export function addPost(Id, title, body, author) {
+export function addPost(id, title, body, author) {
   return {
     type: 'ADD_POST',
-    Id,
+    id,
     title,
     body,
     author
