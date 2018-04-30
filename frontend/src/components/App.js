@@ -33,12 +33,12 @@ class App extends Component {
         <input
           type='text'
           ref={(input) => this.input = input}
-          placeholder="Monday's Breakfast"
+          placeholder="Breakfast"
         />
         <button onClick={this.submitFood}>Submit</button>
 
         <p>
-          Monday's Breakfast: {this.state.calendar && this.state.calendar.breakfast}
+          Breakfast: {this.state.calendar && this.state.calendar.breakfast}
         </p>
       </div>
     )
