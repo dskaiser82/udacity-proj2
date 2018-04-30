@@ -17,7 +17,7 @@ class App extends Component {
     })
   }
   //This Uses a the reducer
-  //and updates the store with this function 
+  //and updates the store with this function
   submitFood = () => {
     this.props.store.dispatch(addRecipe({
       day: 'monday',
@@ -39,7 +39,7 @@ class App extends Component {
         <button onClick={this.submitFood}>Submit</button>
 
         <p>
-          Monday's Breakfast: {this.state.calendar && this.state.calendar.monday.breakfast}
+          Monday's Breakfast: {this.state.calendar && this.state.calendar.breakfast}
         </p>
       </div>
     )
