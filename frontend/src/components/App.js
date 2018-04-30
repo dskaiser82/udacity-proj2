@@ -20,9 +20,8 @@ class App extends Component {
   //and updates the store with this function
   submitFood = () => {
     this.props.store.dispatch(addRecipe({
-      day: 'monday',
       meal: 'breakfast',
-      recipe: this.input.value
+      typed: this.input.value
 
     }))
 
