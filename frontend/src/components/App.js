@@ -1,23 +1,26 @@
 import React, { Component } from 'react'
-import { addRecipe } from '../actions'
+import { addRecipe, removeFromCalendar  } from '../actions'
 
 class App extends Component {
-  state = {
-    calendar: null
-  }
+  state = {}
+
   componentDidMount () {
     const { store } = this.props
 
 
+    //This is a store change listener to update the store
     store.subscribe(() => {
       this.setState(() => ({
+
         //calendar is from reducers
+        //Like the master function
         calendar: store.getState()
       }))
     })
   }
   //This Uses a the reducer
   //and updates the store with this function
+  //It an Onlick see html below
   submitFood = () => {
     this.props.store.dispatch(addRecipe({
       meal: this.input.value
@@ -25,6 +28,11 @@ class App extends Component {
     }))
 
     this.input.value = ''
+  }
+
+  killFood = () => {
+    this.props.store.dispatch(removeFromCalendar({}))
+
   }
   render() {
     return (
@@ -35,6 +43,7 @@ class App extends Component {
           placeholder="Breakfast"
         />
         <button onClick={this.submitFood}>Submit</button>
+        <button onClick={this.killFood}>KILL FOOD</button>
 
         <p>
           Breakfast: {this.state.calendar && this.state.calendar.meal}

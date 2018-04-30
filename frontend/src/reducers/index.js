@@ -13,7 +13,7 @@ function calendar (state = [], action) {
     case REMOVE_FROM_CALENDAR :
     return {
       ...state,
-        [meal]: null,
+        meal: null,
 
     }
     default :
