@@ -7,7 +7,7 @@ const initialCalendarState = {
 }
 
 function calendar (state = initialCalendarState, action) {
-  const { day, recipe, meal } = action
+  const { recipe, meal } = action
 
   switch (action.type) {
     case ADD_RECIPE :
@@ -17,13 +17,11 @@ function calendar (state = initialCalendarState, action) {
 
       }
     case REMOVE_FROM_CALENDAR :
-      return {
-        ...state,
-        [day]: {
-          ...state[day],
-          [meal]: null,
-        }
-      }
+    return {
+      ...state,
+        [meal]: null,
+
+    }
     default :
       return state
   }
