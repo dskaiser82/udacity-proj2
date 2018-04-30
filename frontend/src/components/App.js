@@ -30,6 +30,8 @@ class App extends Component {
     this.input.value = ''
   }
 
+  //normall we'd have things in the object,
+  //but the reducer function makes meal null
   killFood = () => {
     this.props.store.dispatch(removeFromCalendar({}))
 
