@@ -1,9 +1,10 @@
 let commentId = 1;
 
-export const addComment = (text) => ({
+export const addComment = (text, author) => ({
   type: 'ADD_COMMENT',
   id: commentId++, //Notice the ++
-  text: text
+  text: text,
+  author: author
 });
 
 export const setComments = (commentList) => ({
