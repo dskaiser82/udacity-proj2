@@ -21,14 +21,11 @@ class App extends Component {
   //This Uses a the reducer
   //and updates the store with this function
   //It an Onlick see html below
-  submitFood = (comment) => {
-    this.props.store.dispatch(addComment({
-      author: comment.author,
-      text: this.input.value
-    }));
-
-    this.input.value = ''
+  submitFood = (text) => {
+    let input = this.input.value
+    this.props.store.dispatch(addComment(input))
   }
+
 
   //normall we'd have things in the object,
   //but the reducer function makes meal null

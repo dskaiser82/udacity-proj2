@@ -1,9 +1,8 @@
 let commentId = 1;
 
-export const addComment = (author, text) => ({
+export const addComment = (text) => ({
   type: 'ADD_COMMENT',
   id: commentId++, //Notice the ++
-  author: author,
   text: text
 });
 
