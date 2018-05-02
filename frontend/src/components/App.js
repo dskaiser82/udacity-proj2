@@ -17,7 +17,7 @@ class App extends Component {
   //This Uses a the reducer
   //and updates the store with this function
   //It an Onlick see html below
-  submitFood = (text, author) => {
+  submitPost = (text, author) => {
     this.props.store.dispatch(addComment(this.input.value, "bucko"))
 
     this.input.value = '' //clear input
@@ -26,13 +26,6 @@ class App extends Component {
     console.log(this.state.comments[0].text)
   }
 
-
-  //normall we'd have things in the object,
-  //but the reducer function makes meal null
-  // killFood = () => {
-  //   this.props.store.dispatch(removeFromCalendar({}))
-  //
-  // }
   render() {
     return (
       <div>
@@ -41,7 +34,7 @@ class App extends Component {
           ref={(input) => this.input = input}
           placeholder="Comment"
         />
-        <button onClick={this.submitFood}>Submit</button>
+        <button onClick={this.submitPost}>Submit</button>
         <button >KILL FOOD</button>
 
         <p>
