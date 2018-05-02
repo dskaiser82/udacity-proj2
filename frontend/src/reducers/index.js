@@ -1,24 +1,8 @@
-import { ADD_RECIPE, REMOVE_FROM_CALENDAR } from '../actions'
+import { combineReducers } from 'redux'
+import comments from './comments'
 
+const app = combineReducers({
+  comments
+});
 
-function calendar (state = [], action) {
-  const { typed, meal } = action
-
-  switch (action.type) {
-    case ADD_RECIPE :
-      return {
-        ...state,
-          meal: action.meal,
-      }
-    case REMOVE_FROM_CALENDAR :
-    return {
-      ...state,
-        meal: null,
-
-    }
-    default :
-      return state
-  }
-}
-
-export default calendar
+export default app

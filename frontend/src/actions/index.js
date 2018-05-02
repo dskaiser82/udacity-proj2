@@ -1,17 +1,13 @@
-export const ADD_RECIPE = 'ADD_RECIPE'
-export const REMOVE_FROM_CALENDAR = 'REMOVE_FROM_CALENDAR'
+let commentId = 1;
 
-export function addRecipe ({ typed, meal }) {
-  return {
-    type: ADD_RECIPE,
-    typed,
-    meal,
-  }
-}
+export const addComment = (author, text) => ({
+  type: 'ADD_COMMENT',
+  id: commentId++, //Notice the ++
+  author: author,
+  text: text
+});
 
-export function removeFromCalendar ({ meal }) {
-  return {
-    type: REMOVE_FROM_CALENDAR,
-    meal,
-  }
-}
+export const setComments = (commentList) => ({
+  type: 'SET_COMMENTS',
+  commentList: commentList
+});

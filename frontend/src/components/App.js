@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addRecipe, removeFromCalendar  } from '../actions'
+import {addComment, setComments} from '../actions/index';
 
 class App extends Component {
   state = {}
@@ -14,7 +14,7 @@ class App extends Component {
 
         //calendar is from reducers
         //Like the master function
-        calendar: store.getState()
+        comments: store.getState()
       }))
     })
   }
@@ -22,7 +22,7 @@ class App extends Component {
   //and updates the store with this function
   //It an Onlick see html below
   submitFood = () => {
-    this.props.store.dispatch(addRecipe({
+    this.props.store.dispatch(addComment({
       meal: this.input.value
 
     }))
@@ -32,10 +32,10 @@ class App extends Component {
 
   //normall we'd have things in the object,
   //but the reducer function makes meal null
-  killFood = () => {
-    this.props.store.dispatch(removeFromCalendar({}))
-
-  }
+  // killFood = () => {
+  //   this.props.store.dispatch(removeFromCalendar({}))
+  //
+  // }
   render() {
     return (
       <div>
