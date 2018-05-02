@@ -7,15 +7,11 @@ class App extends Component {
   componentDidMount () {
     const { store } = this.props
 
-
     //This is a store change listener to update the store
     store.subscribe(() => {
-      this.setState(() => ({
-
-        //calendar is from reducers
-        //Like the master function
-        comments: store.getState()
-      }))
+      this.setState(() => (
+        store.getState()
+      ))
     })
   }
   //This Uses a the reducer
@@ -24,7 +20,10 @@ class App extends Component {
   submitFood = (text, author) => {
     this.props.store.dispatch(addComment(this.input.value, "bucko"))
 
-    this.input.value = ''
+    this.input.value = '' //clear input
+
+    if(this.state.comments)
+    console.log(this.state.comments[0].text)
   }
 
 
@@ -40,13 +39,13 @@ class App extends Component {
         <input
           type='text'
           ref={(input) => this.input = input}
-          placeholder="Breakfast"
+          placeholder="Comment"
         />
         <button onClick={this.submitFood}>Submit</button>
-        <button onClick={this.killFood}>KILL FOOD</button>
+        <button >KILL FOOD</button>
 
         <p>
-          Breakfast: {this.state.calendar && this.state.calendar.meal}
+          Comment: {this.state.comments && this.state.comments[0].text}
         </p>
       </div>
     )
