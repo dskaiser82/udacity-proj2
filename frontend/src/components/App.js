@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {addComment, setComments} from '../actions/index';
+import {addComment, setComments} from '../actions/comments';
 
 class App extends Component {
   state = {}
