@@ -3,7 +3,7 @@ import comments from './comments'
 import posts from './posts'
 
 const app = combineReducers({
-  comments
+  comments, posts
 });
 
 export default app

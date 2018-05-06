@@ -19,7 +19,7 @@ class App extends Component {
   //and updates the store with this function
   //It an Onlick see html below
   submitComment = (text, author) => {
-    this.props.store.dispatch(addComment(this.input.value, "bucko"))
+    this.props.store.dispatch(addPost(this.input.value, "bucko"))
 
     this.input.value = '' //clear input
 
@@ -40,7 +40,7 @@ class App extends Component {
         <button >KILL FOOD</button>
 
         <p>
-          Comment: {this.state.comments && this.state.comments[0].text}
+          Comment: {this.state.posts && this.state.posts[0].text}
         </p>
         {/* BELOW */}
 
