@@ -7,7 +7,7 @@ class App extends Component {
   componentDidMount () {
     const { store } = this.props
 
-    //This is a store change listener to update the store
+    //This iss a store change listener to update the store
     store.subscribe(() => {
       this.setState(() => (
         store.getState()
