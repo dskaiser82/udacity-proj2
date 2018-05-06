@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {addComment, setComments} from '../actions/comments';
+import {addPost, setPosts} from '../actions/posts';
 
 class App extends Component {
   state = {}
@@ -17,7 +18,7 @@ class App extends Component {
   //This Uses a the reducer
   //and updates the store with this function
   //It an Onlick see html below
-  submitPost = (text, author) => {
+  submitComment = (text, author) => {
     this.props.store.dispatch(addComment(this.input.value, "bucko"))
 
     this.input.value = '' //clear input
@@ -29,17 +30,23 @@ class App extends Component {
   render() {
     return (
       <div>
+
         <input
           type='text'
           ref={(input) => this.input = input}
           placeholder="Comment"
         />
-        <button onClick={this.submitPost}>Submit</button>
+        <button onClick={this.submitComment}>Submit</button>
         <button >KILL FOOD</button>
 
         <p>
           Comment: {this.state.comments && this.state.comments[0].text}
         </p>
+        {/* BELOW */}
+
+
+
+
       </div>
     )
   }
