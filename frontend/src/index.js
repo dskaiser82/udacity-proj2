@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { createStore, applyMiddleware, compose } from 'redux'; //for Redux
-import reducer from './reducers'  //for Redux
+import reducer from './reducers/index'  //for Redux
 import { Provider } from 'react-redux'; //New React Dedux Store
 
 import ReadApp from './components/App'; //Main component
