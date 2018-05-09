@@ -28,8 +28,7 @@ class App extends Component {
 
     this.input.value = '' //clear input
 
-    if(this.state.comments)
-    console.log(this.state.comments[0].text)
+    
   }
 
   submitPost = (text, author) => {
@@ -55,22 +54,13 @@ class App extends Component {
         {/* BELOW */}
 
 
-        <input
-          type='text'
-          ref={(input) => this.input = input}
-          placeholder="Post"
-        />
-        <button onClick={this.submitPost}>Submit</button>
-        <button >KILL FOOD</button>
-
-        <p>
-          Post:
-        </p>
 
         <Route path="/posts" render={({ history }) => (
-            <Posts/>
+            <Posts
+               submitPost={this.submitPost}
+            />
           )}/>
-          {/* Open Search */}
+
           <Link
               to="/posts"
               className="open-posts"
