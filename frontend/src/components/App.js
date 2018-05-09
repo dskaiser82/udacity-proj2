@@ -23,10 +23,9 @@ class App extends Component {
   //and updates the store with this function
   //It an Onlick see html below
   submitComment = (text, author) => {
-    this.props.store.dispatch(addComment(this.input.value, "bucko"))
+    this.props.store.dispatch(addComment("Comment added", "bucko"))
 
-    this.input.value = '' //clear input
-
+    // this.props.input.value = '' //clear input
 
   }
 
@@ -63,10 +62,15 @@ class App extends Component {
 
         <Route path="/postdetails" render={({ history }) => (
             <PostDetails
-               submitComment={this.submitPost}
+               submitComment={this.submitComment}
             />
         )}/>
-      
+        <p>-----</p>
+        <Link
+            to="/"
+            className="home"
+          >Go Home
+        </Link>
 
       </div>
     )

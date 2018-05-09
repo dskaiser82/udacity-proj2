@@ -11,6 +11,7 @@ class Posts extends Component{
 
     return(
     <div>
+      <h1>List of Posts</h1>
 
       <input
         type='text'
