@@ -3,9 +3,8 @@ import {addComment, setComments} from '../actions/comments';
 import {addPost, setPosts} from '../actions/posts';
 import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
-
-
 import Posts from './Posts.js'
+import PostDetails from './PostDetails.js'
 
 class App extends Component {
   state = {}
@@ -42,17 +41,12 @@ class App extends Component {
 
         <Route exact path="/" render={() => (
          <div className="read-app">
-           <input
-             type='text'
-             ref={(input) => this.input = input}
-             placeholder="Comment"
-           />
-           <button onClick={this.submitComment}>Submit</button>
-           <button >KILL FOOD</button>
-
-           <p>
-             Comment: {this.state.comments.text && this.state.comments[0].text}
-           </p>
+          <h1>Categories</h1>
+            <ul>
+              <li>React</li>
+              <li>Rdux</li>
+              <li>Udacity</li>
+            </ul>
         </div>
         )}/>
 
@@ -66,6 +60,13 @@ class App extends Component {
             className="open-posts"
           >Go Posts
         </Link>
+
+        <Route path="/postdetails" render={({ history }) => (
+            <PostDetails
+               submitComment={this.submitPost}
+            />
+        )}/>
+      
 
       </div>
     )
