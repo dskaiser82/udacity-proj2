@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import {addComment, setComments} from '../actions/comments';
 import {addPost, setPosts} from '../actions/posts';
+import { Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
+
+import Posts from './Posts.js'
 
 class App extends Component {
   state = {}
@@ -62,6 +67,15 @@ class App extends Component {
           Post:
         </p>
 
+        <Route path="/posts" render={({ history }) => (
+            <Posts/>
+          )}/>
+          {/* Open Search */}
+          <Link
+              to="/posts"
+              className="open-posts"
+            >+
+          </Link>
 
       </div>
     )

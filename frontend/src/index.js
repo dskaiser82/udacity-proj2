@@ -8,6 +8,9 @@ import { Provider } from 'react-redux'; //New React Dedux Store
 import ReadApp from './components/App'; //Main component
 import registerServiceWorker from './registerServiceWorker';
 
+import { BrowserRouter } from 'react-router-dom'
+
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const logger = store => next => action => {
@@ -29,5 +32,11 @@ const store = createStore(
 )
 
 
-ReactDOM.render(<ReadApp store={store} />, document.getElementById('root'));
+ReactDOM.render(
+  <BrowserRouter>
+    <ReadApp store={store} />
+  </BrowserRouter>
+    , document.getElementById('root')
+
+);
 registerServiceWorker();
