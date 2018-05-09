@@ -28,7 +28,7 @@ class App extends Component {
 
     this.input.value = '' //clear input
 
-    
+
   }
 
   submitPost = (text, author) => {
@@ -40,19 +40,23 @@ class App extends Component {
     return (
       <div>
 
-        <input
-          type='text'
-          ref={(input) => this.input = input}
-          placeholder="Comment"
-        />
-        <button onClick={this.submitComment}>Submit</button>
-        <button >KILL FOOD</button>
+        <Route exact path="/" render={() => (
+     <div className="read-app">
+       <input
+         type='text'
+         ref={(input) => this.input = input}
+         placeholder="Comment"
+       />
+       <button onClick={this.submitComment}>Submit</button>
+       <button >KILL FOOD</button>
 
-        <p>
-          Comment: {this.state.comments && this.state.comments[0].text}
-        </p>
-        {/* BELOW */}
+       <p>
+         Comment: {this.state.comments && this.state.comments[0].text}
+       </p>
 
+
+   </div>
+     )}/>
 
 
         <Route path="/posts" render={({ history }) => (
@@ -64,7 +68,7 @@ class App extends Component {
           <Link
               to="/posts"
               className="open-posts"
-            >+
+            >Go Posts
           </Link>
 
       </div>
