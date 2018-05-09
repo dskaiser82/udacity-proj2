@@ -41,35 +41,31 @@ class App extends Component {
       <div>
 
         <Route exact path="/" render={() => (
-     <div className="read-app">
-       <input
-         type='text'
-         ref={(input) => this.input = input}
-         placeholder="Comment"
-       />
-       <button onClick={this.submitComment}>Submit</button>
-       <button >KILL FOOD</button>
+         <div className="read-app">
+           <input
+             type='text'
+             ref={(input) => this.input = input}
+             placeholder="Comment"
+           />
+           <button onClick={this.submitComment}>Submit</button>
+           <button >KILL FOOD</button>
 
-       <p>
-         Comment: {this.state.comments && this.state.comments[0].text}
-       </p>
-
-
-   </div>
-     )}/>
-
+           <p>
+             Comment: {this.state.comments.text && this.state.comments[0].text}
+           </p>
+        </div>
+        )}/>
 
         <Route path="/posts" render={({ history }) => (
             <Posts
                submitPost={this.submitPost}
             />
-          )}/>
-
-          <Link
-              to="/posts"
-              className="open-posts"
-            >Go Posts
-          </Link>
+        )}/>
+        <Link
+            to="/posts"
+            className="open-posts"
+          >Go Posts
+        </Link>
 
       </div>
     )
