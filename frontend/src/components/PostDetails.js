@@ -24,6 +24,11 @@ class PostDetails extends Component{
         Post:
       </p>
 
+      <Link
+          to="/"
+          className="home"
+        >Go Home
+      </Link>
 
     </div>
     )

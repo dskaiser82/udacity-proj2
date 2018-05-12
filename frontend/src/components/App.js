@@ -9,10 +9,6 @@ import PostDetails from './PostDetails.js'
 class App extends Component {
   state = {}
 
-
-
-
-
   render() {
     return (
       <div>
@@ -45,11 +41,7 @@ class App extends Component {
             />
         )}/>
         <p>-----</p>
-        <Link
-            to="/"
-            className="home"
-          >Go Home
-        </Link>
+
 
       </div>
     )

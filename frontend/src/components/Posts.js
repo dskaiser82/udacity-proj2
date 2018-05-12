@@ -30,6 +30,12 @@ class Posts extends Component{
           className="open-posts"
         >Go To Deatils
       </Link>
+      <div>-------</div>
+      <Link
+          to="/"
+          className="home"
+        >Go Home
+      </Link>
 
     </div>
     )
