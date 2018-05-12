@@ -3,6 +3,7 @@ import {addComment, setComments} from '../actions/comments';
 import {addPost, setPosts} from '../actions/posts';
 import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
+import { connect } from "react-redux";
 import Posts from './Posts.js'
 import PostDetails from './PostDetails.js'
 
@@ -10,6 +11,9 @@ class App extends Component {
   state = {}
 
   render() {
+
+    console.log('Props', this.props)
+
     return (
       <div>
 
@@ -40,7 +44,7 @@ class App extends Component {
                submitComment={this.submitComment}
             />
         )}/>
-    
+
 
 
       </div>
@@ -48,4 +52,11 @@ class App extends Component {
   }
 }
 
-export default App
+function mapStateToProps(posts){
+  return{
+    author: "Benny-san"
+  }
+}
+
+
+export default connect(mapStateToProps)(App)
