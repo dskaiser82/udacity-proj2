@@ -40,7 +40,7 @@ class App extends Component {
                submitComment={this.submitComment}
             />
         )}/>
-        <p>-----</p>
+    
 
 
       </div>
