@@ -8,7 +8,9 @@ import Posts from './Posts.js'
 import PostDetails from './PostDetails.js'
 
 class App extends Component {
-  state = {}
+  doThing = () => {
+    this.props.dispatch(addPost({}))  //now that we have connect, this.props has dispatch
+  }
 
   render() {
 
