@@ -9,30 +9,9 @@ import PostDetails from './PostDetails.js'
 class App extends Component {
   state = {}
 
-  componentDidMount () {
-    const { store } = this.props
 
-    //This iss a store change listener to update the store
-    store.subscribe(() => {
-      this.setState(() => (
-        store.getState()
-      ))
-    })
-  }
-  //This Uses a the reducer
-  //and updates the store with this function
-  //It an Onlick see html below
-  submitComment = (text, author) => {
-    this.props.store.dispatch(addComment("Comment added", "bucko"))
 
-    // this.props.input.value = '' //clear input
 
-  }
-
-  submitPost = (text, author) => {
-      console.log("Fuggs")
-      this.props.store.dispatch(addPost("Post Tewxt Pls", "bucko"))
-  }
 
   render() {
     return (

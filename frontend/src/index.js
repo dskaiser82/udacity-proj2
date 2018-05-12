@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { createStore, applyMiddleware, compose } from 'redux'; //for Redux
-import reducer from './reducers/index'  //for Redux
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'; //New React Dedux Store
 
-import ReadApp from './components/App'; //Main component
+import reducer from './reducers/index'  //for Redux
+import App from './components/App'; //Main component
+
 import registerServiceWorker from './registerServiceWorker';
 
-import { BrowserRouter } from 'react-router-dom'
+
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -33,9 +35,11 @@ const store = createStore(
 
 
 ReactDOM.render(
-  <BrowserRouter>
-    <ReadApp store={store} />
-  </BrowserRouter>
+  <Provider store={store}>
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
+    </Provider>
     , document.getElementById('root')
 
 );
