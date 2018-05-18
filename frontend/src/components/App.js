@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {addComment, setComments} from '../actions/comments';
 import {addPost, setPosts} from '../actions/posts';
+import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { connect } from "react-redux";
