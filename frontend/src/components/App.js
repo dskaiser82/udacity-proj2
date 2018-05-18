@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { connect } from "react-redux";
+import { BrowserRouter } from 'react-router-dom'
 import Posts from './Posts.js'
 import PostDetails from './PostDetails.js'
 
@@ -18,6 +19,7 @@ class App extends Component {
     console.log('Props', this.props)
 
     return (
+    <BrowserRouter>
       <div>
 
         <Route exact path="/" render={() => (
@@ -51,6 +53,7 @@ class App extends Component {
 
 
       </div>
+    </BrowserRouter>
     )
   }
 }
